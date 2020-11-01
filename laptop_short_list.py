@@ -28,11 +28,11 @@ class Laptop:
 
     def gameing(self):
         if self.GPU == 'none':
-            return ('you can not run high end game ')
+            return speech(('you can not run high end game '))
         elif self.GPU == "gtx-130":
-            return ('you can gameing with vwry low setting')
+            return speech(('you can gameing with very low setting'))
         else:
-            return ("you can gameing with hing fps")
+            return speech(("you can gameing with high fps"))
 
     def offer(self):
         off = (self.price//100)*self.discount
@@ -54,7 +54,7 @@ l6.discount = 5
 l7 = Laptop('asus(gameing)','16','1-TB','256gb','gtx-2080',75000,'i7-4gen')
 l7.discount = 20
 
-print(speech('WELCOM TO LAPI.PY'))
+print(speech('WELCOME TO LAPI.PY'))
 print(speech(F'number of laptop is {Laptop.total}'))
 def main_menu():
     temp = " "
@@ -67,9 +67,9 @@ print(main_menu())
 number = int(input("select your opction : "))
 
 def last():
-    print(speech("back to the main menu please press - 0\n if you want to comfirm your oder please press - 1"))
+    print(speech("back to the previous menu please press - 0\n if you want to comfirm your oder please press - 1"))
     g = int(input("Enter : "))
-    number = 1 
+    # number = 1 
     if g == 0:
         # print(main_menu())
         return (select_laptop(number))
@@ -81,11 +81,12 @@ def last():
 def select_laptop(num):
     temp = ""
     if number == 1:
-        print(F"1->{l1.name}\n2->{l2.name}\n3->{l3.name}\n4->{l4.name}\n5->{l5.name}\n6->{l6.name}\n->{l7.name}")
+        print(F"1->{l1.name}\n2->{l2.name}\n3->{l3.name}\n4->{l4.name}\n5->{l5.name}\n6->{l6.name}\n7->{l7.name}")
         print(speech("please select your laptop number"))
         char = int(input("Enter your number : "))
         if char == 1:
             print(speech(f"your laptop specification - {l1.__dict__}"))
+            print(l1.gameing())
             print(speech(f"actual price rupees-{l1.price}\nwith discount price rupees-{l1.offer()}"))
             return last()
 
@@ -93,31 +94,37 @@ def select_laptop(num):
         
         elif char == 2:
             print(speech(f"your laptop specification - {l2.__dict__}"))
+            print(l2.gameing())
             print(speech(f"actual price rupees-{l2.price}\nwith discount price rupees-{l2.offer()}"))
             return last()
 
         elif char == 3:
             print(speech(f"your laptop specification - {l3.__dict__}"))
+            print(l3.gameing())
             print(speech(f"actual price rupees-{l3.price}\nwith discount price rupees-{l3.offer()}"))
             return last()
 
         elif char == 4:
             print(speech(f"your laptop specification - {l4.__dict__}"))
+            print(l4.gameing())
             print(speech(f"actual price rupees-{l4.price}\nwith discount price rupees-{l4.offer()}"))
             return last()
 
         elif char == 5:
             print(speech(f"your laptop specification - {l5.__dict__}"))
+            print(l5.gameing())
             print(speech(f"actual price rupees-{l5.price}\nwith discount price rupees-{l5.offer()}"))
             return last()
 
         elif char == 6:
             print(speech(f"your laptop specification - {l6.__dict__}"))
+            print(l6.gameing())
             print(speech(f"actual price rupees-{l6.price}\nwith discount price rupees-{l6.offer()}"))
             return last()
 
         elif char == 7:
             print(speech(f"your laptop specification - {l7.__dict__}"))
+            print(l7.gameing())
             print(speech(f"actual price rupees-{l7.price}\nwith discount price rupees-{l7.offer()}"))
             return last()
 
@@ -129,21 +136,25 @@ def select_laptop(num):
         c = int(input("Enter your number : "))
         if c == 1:
             print(speech(f"your laptop specification - {l4.__dict__}"))
+            print(l4.gameing())
             print(speech(f"actual price rupees-{l4.price}\nwith discount price rupees-{l4.offer()}"))
             return last()
 
         elif c == 2:
             print(speech(f"your laptop specification - {l5.__dict__}"))
+            print(l5.gameing())
             print(speech(f"actual price rupees-{l5.price}\nwith discount price rupees-{l5.offer()}"))
             return last()
 
         elif c == 3:
             print(speech(f"your laptop specification - {l6.__dict__}"))
+            print(l6.gameing())
             print(speech(f"actual price rupees-{l6.price}\nwith discount price rupees-{l6.offer()}"))
             return last()
 
         elif c == 4:
             print(speech(f"your laptop specification - {l7.__dict__}"))
+            print(l7.gameing())
             print(speech(f"actual price rupees-{l7.price}\nwith discount price rupees-{l7.offer()}"))
             return last()
 
@@ -153,10 +164,12 @@ def select_laptop(num):
         char = int(input("Enter your number : "))
         if char == 1:
             print(speech(f"your laptop specification - {l1.__dict__}"))
+            print(l1.gameing())
             print(speech(f"actual price rupees-{l1.price}\nwith discount price rupees-{l1.offer()}"))
             return last()
         elif char == 2 :
             print(speech(f"your laptop specification - {l2.__dict__}"))
+            print(l2.gameing())
             print(speech(f"actual price rupees-{l2.price}\nwith discount price rupees-{l2.offer()}"))
             return last()
     return temp
@@ -165,4 +178,5 @@ def select_laptop(num):
 
 
 print(select_laptop(number))
+        
         
